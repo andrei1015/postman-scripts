@@ -1,17 +1,17 @@
 import requests, ids
 
 # Set your Postman API key and collection ID
-get_api_key = f"{ids.get_api_key}"
 api_key = f"{ids.api_key}"
+collection_access_key = f"{ids.collection_access_key}"
 collection_id = f"{ids.collection_id}"
 
 # Define the endpoint URLs
-get_collection_url = f"https://api.getpostman.com/collections/{collection_id}?access_key={get_api_key}"
+get_collection_url = f"https://api.getpostman.com/collections/{collection_id}?access_key={api_key}"
 
 
 
 # Set the authentication headers for the API requests
-headers = {"X-Api-Key": api_key, "Content-Type": "application/json", "Accept": "application/vnd.postman.v2+json"}
+headers = {"X-Api-Key": collection_access_key, "Content-Type": "application/json", "Accept": "application/vnd.postman.v2+json"}
 
 # Send a GET request to get the collection data
 response = requests.get(get_collection_url)
